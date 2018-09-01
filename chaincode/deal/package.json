@@ -1,0 +1,21 @@
+{
+  "name": "deal",
+  "version": "1.0.0",
+  "description": "Deal sample chaincode",
+  "main": "deal.js",
+  "scripts": {
+    "start": "node deal.js"
+  },
+  "keywords": [
+    "deal",
+    "chaincode",
+    "nodejs",
+    "hyperledger",
+    "fabric"
+  ],
+  "author": "rmorbach",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "fabric-shim": "^1.2.0"
+  }
+}
