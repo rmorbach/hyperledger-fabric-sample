@@ -8,7 +8,7 @@ For a complete explanation about the construction and execution of the network p
 * Docker 18.06.0 or later
 * Docker-compose 1.22 or later
 * Node.js 8.11.x family
-* NPM (Node Package Manager) 5.6.0 ou superior
+* NPM (Node Package Manager) 5.6.0 or later
 * cURL 7.x
 
 ## Commands
