@@ -13,29 +13,29 @@ This is a sample project of Fabric 1.4.0 running a chaincode developed in Node.j
 ## Commands
 
 ```bash
-./downloadBinaries.sh
+$ ./downloadBinaries.sh
 
 ```
 
 ```bash
-cd network
-../bin/cryptogen generate --config=./crypto-config.yaml
+$ cd network
+$ ../bin/cryptogen generate --config=./crypto-config.yaml
 ```
 
 ```bash
-../bin/configtxgen -profile OrgsOrdererGenesis -outputBlock ./channel-artifacts/genesis.block
+$ ../bin/configtxgen -profile OrgsOrdererGenesis -outputBlock ./channel-artifacts/genesis.block
 ```
 
 ```bash
-../bin/configtxgen -profile OrgsChannel -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID samplechannel
+$ ../bin/configtxgen -profile OrgsChannel -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID samplechannel
 ```
 
 ```bash
-../bin/configtxgen -profile OrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/ProviderMSPanchors.tx -channelID samplechannel -asOrg ProviderMSP
+$ ../bin/configtxgen -profile OrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/ProviderMSPanchors.tx -channelID samplechannel -asOrg ProviderMSP
 ```
 
 ```bash
-../bin/configtxgen -profile OrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/ConsumerMSPanchors.tx -channelID samplechannel -asOrg ConsumerMSP
+$ ../bin/configtxgen -profile OrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/ConsumerMSPanchors.tx -channelID samplechannel -asOrg ConsumerMSP
 ```
 
 ```bash
