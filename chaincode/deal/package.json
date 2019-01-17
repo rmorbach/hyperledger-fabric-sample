@@ -1,6 +1,6 @@
 {
   "name": "deal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Deal sample chaincode",
   "main": "deal.js",
   "scripts": {
@@ -16,6 +16,6 @@
   "author": "rmorbach",
   "license": "Apache-2.0",
   "dependencies": {
-    "fabric-shim": "^1.2.0"
+    "fabric-shim": "^1.4.0"
   }
 }

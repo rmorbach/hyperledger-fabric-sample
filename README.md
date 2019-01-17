@@ -39,5 +39,95 @@ cd network
 ```
 
 ```bash
-docker-compose up -d
+$ docker-compose up -d
 ```
+```
+$ docker exec -it cli bash
+
+$ peer channel create -o orderer.sampledomain.com:7050 -c samplechannel -f ./channel-artifacts/channel.tx
+
+$ peer channel join -b samplechannel.block
+
+$ export CORE_PEER_ADDRESS=peer1.provider.sampledomain.com:7051
+
+$ peer channel join -b samplechannel.block
+
+$ export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto-config/peerOrganizations/consumer.sampledomain.com/users/Admin\@consumer.sampledomain.com/msp/
+
+$ export CORE_PEER_ADDRESS=peer0.consumer.sampledomain.com:7051
+
+$ export CORE_PEER_LOCALMSPID=ConsumerMSP
+
+$ peer channel join -b samplechannel.block
+
+$ export CORE_PEER_ADDRESS=peer1.consumer.sampledomain.com:7051
+
+$ peer channel join -b samplechannel.block
+
+$ export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto-config/peerOrganizations/provider.sampledomain.com/users/Admin\@provider.sampledomain.com/msp/
+
+$ export CORE_PEER_ADDRESS=peer0.provider.sampledomain.com:7051
+
+$ export CORE_PEER_LOCALMSPID=ProviderMSP
+
+$ peer channel update -o orderer.sampledomain.com:7050 -c samplechannel -f ./channel-artifacts/${CORE_PEER_LOCALMSPID}anchors.tx
+
+$ export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto-config/peerOrganizations/consumer.sampledomain.com/users/Admin\@consumer.sampledomain.com/msp/
+
+$ export CORE_PEER_ADDRESS=peer0.consumer.sampledomain.com:7051
+
+$ export CORE_PEER_LOCALMSPID=ConsumerMSP
+
+$ peer channel update -o orderer.sampledomain.com:7050 -c samplechannel -f ./channel-artifacts/${CORE_PEER_LOCALMSPID}anchors.tx
+```
+
+## Chaincode
+
+```
+$ export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto-config/peerOrganizations/provider.sampledomain.com/users/Admin\@provider.sampledomain.com/msp/
+
+$ export CORE_PEER_ADDRESS=peer0.provider.sampledomain.com:7051
+
+$ export CORE_PEER_LOCALMSPID=ProviderMSP
+
+$ peer chaincode install -n deal -v 1.0 -l node -p /opt/gopath/src/github.com/chaincode/deal
+
+$ export CORE_PEER_ADDRESS=peer1.provider.sampledomain.com:7051
+
+$ peer chaincode install -n deal -v 1.0 -l node -p /opt/gopath/src/github.com/chaincode/deal
+
+$ export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto-config/peerOrganizations/consumer.sampledomain.com/users/Admin\@consumer.sampledomain.com/msp/
+
+
+$ export CORE_PEER_ADDRESS=peer0.consumer.sampledomain.com:7051
+
+$ export CORE_PEER_LOCALMSPID=ConsumerMSP
+
+$ peer chaincode install -n deal -v 1.0 -l node -p /opt/gopath/src/github.com/chaincode/deal
+
+$ export CORE_PEER_ADDRESS=peer1.consumer.sampledomain.com:7051
+
+$ peer chaincode install -n deal -v 1.0 -l node -p /opt/gopath/src/github.com/chaincode/deal
+
+$ peer chaincode instantiate -o orderer.sampledomain.com:7050 -C samplechannel -l node -n deal -v 1.0 -c '{"Args":[]}'
+
+$ export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto-config/peerOrganizations/provider.sampledomain.com/users/Admin\@provider.sampledomain.com/msp/
+
+$ export CORE_PEER_ADDRESS=peer0.provider.sampledomain.com:7051
+
+$ export CORE_PEER_LOCALMSPID=ProviderMSP
+
+$ peer chaincode invoke -n deal -c '{"Args":["123", "Product one", "10"], "Function":"registerProduct"}' -C samplechannel
+
+$ peer chaincode query -n deal -c '{"Args":["123"], "Function":"getProduct"}' -C samplechannel
+
+
+
+
+
+
+
+
+```
+
+

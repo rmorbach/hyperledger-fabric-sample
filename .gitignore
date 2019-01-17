@@ -3,4 +3,4 @@ chaincode/deal/node_modules
 chaincode/deal/package-lock.json
 network/crypto-config/*
 _DS_Store
-network/channel_artifacts/*
+network/channel_artifacts
