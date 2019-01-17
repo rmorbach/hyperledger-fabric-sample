@@ -98,7 +98,6 @@ $ peer chaincode install -n deal -v 1.0 -l node -p /opt/gopath/src/github.com/ch
 
 $ export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto-config/peerOrganizations/consumer.sampledomain.com/users/Admin\@consumer.sampledomain.com/msp/
 
-
 $ export CORE_PEER_ADDRESS=peer0.consumer.sampledomain.com:7051
 
 $ export CORE_PEER_LOCALMSPID=ConsumerMSP
@@ -120,14 +119,6 @@ $ export CORE_PEER_LOCALMSPID=ProviderMSP
 $ peer chaincode invoke -n deal -c '{"Args":["123", "Product one", "10"], "Function":"registerProduct"}' -C samplechannel
 
 $ peer chaincode query -n deal -c '{"Args":["123"], "Function":"getProduct"}' -C samplechannel
-
-
-
-
-
-
-
-
 ```
 
 
