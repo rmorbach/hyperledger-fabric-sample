@@ -1,6 +1,6 @@
 # Hyperledger Fabric sample network
 
-This is a sample project of Fabric 1.2.0 running a chaincode developed in Node.js. For a complete explanation about the construction and execution of the network please read the [Medium article](https://medium.com/@morbachrodrigo/criando-uma-rede-blockchain-com-hyperledger-fabric-e-node-js-4192c964e45a) (Portuguese only).
+This is a sample project of Fabric 1.4.0 running a chaincode developed in Node.js. For a complete explanation about the construction and execution of the network please read the [Medium article](https://medium.com/@morbachrodrigo/criando-uma-rede-blockchain-com-hyperledger-fabric-e-node-js-4192c964e45a) (Portuguese only).
 
 ## Requirements
 
