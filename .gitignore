@@ -1,6 +1,9 @@
 bin/
+config/
 chaincode/deal/node_modules
 chaincode/deal/package-lock.json
 network/crypto-config/*
+network/channel-artifacts/*
+!network/channel-artifacts/.gitkeep
 _DS_Store
 network/channel_artifacts
