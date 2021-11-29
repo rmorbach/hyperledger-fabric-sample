@@ -15,7 +15,7 @@ networks:
 services:
   orderer.sampledomain.com:
     container_name: orderer.sampledomain.com
-    image: hyperledger/fabric-orderer:latest
+    image: hyperledger/fabric-orderer:2.3.3
     environment:
       - FABRIC_LOGGING_SPEC=INFO
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
@@ -135,7 +135,7 @@ services:
 
   cli:
     container_name: cli
-    image: hyperledger/fabric-tools:latest
+    image: hyperledger/fabric-tools:2.3.3
     tty: true
     stdin_open: true
     environment:
